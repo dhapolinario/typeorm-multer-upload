@@ -1,8 +1,17 @@
-// import AppError from '../errors/AppError';
+import { getRepository } from 'typeorm';
+import AppError from '../errors/AppError';
+
+import Transaction from '../models/Transaction';
 
 class DeleteTransactionService {
-  public async execute(): Promise<void> {
-    // TODO
+  public async execute(id: string): Promise<void> {
+    const transactionsRepository = getRepository(Transaction);
+
+    if (!transactionsRepository) {
+      throw new AppError('Transaction not found.', 404);
+    }
+
+    await transactionsRepository.delete(id);
   }
 }
 
