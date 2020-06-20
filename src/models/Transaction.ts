@@ -24,7 +24,7 @@ class Transaction {
   @Column({ type: 'numeric', scale: 2 })
   value: number;
 
-  @ManyToOne(() => Category, undefined, {
+  @ManyToOne(() => Category, category => category.transaction, {
     eager: true,
   })
   @JoinColumn({ name: 'category_id' })
