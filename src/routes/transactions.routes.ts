@@ -4,7 +4,6 @@ import multer from 'multer';
 import CreateTransactionService from '../services/CreateTransactionService';
 import ListTransactionService from '../services/ListTransactionService';
 import uploadConfig from '../configs/upload';
-// import TransactionsBalance from '../models/TransactionsBalance';
 import DeleteTransactionService from '../services/DeleteTransactionService';
 import ImportTransactionsService from '../services/ImportTransactionsService';
 
